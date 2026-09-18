@@ -24,8 +24,11 @@ def calculate_tax(amount):
     tax_rate = 0.1
     return amount * tax_rate
 
-inventory, reject_count = get_valid_input()
+def generate_report(inventory, reject_count):
+    print("====== Delivery Report ======")
+    print("Total Deliveries Processed:", inventory)
+    print("Total Tax Amount:", calculate_tax(inventory))
+    print("Number of Failed/Rejected Entries:", reject_count)
 
-print("Total Deliveries Processed:", inventory)
-print("Total Tax Amount:", calculate_tax(inventory))
-print("Number of Failed/Rejected Entries:", reject_count)
+inventory, reject_count = get_valid_input()
+generate_report(inventory, reject_count)
