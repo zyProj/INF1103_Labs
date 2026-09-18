@@ -7,16 +7,20 @@ def get_valid_input():
             break
         elif inventory_input.isdigit():
             if inventory + int(inventory_input) > 500:
-                    print("Inventory limit exceeded!")
-                    reject_count += 1
+                print("Inventory limit exceeded!")
+                reject_count += 1
             else:
-                inventory += int(inventory_input)
+                inventory = process_delivery(inventory, inventory_input)
         else:
             print("Invalid input! Please enter a number or 'quit' to exit.")
             reject_count += 1
     return inventory, reject_count
 
+def process_delivery(current_total, new_value):
+    current_total += int(new_value)
+    return current_total
+
 inventory, reject_count = get_valid_input()
-     
+
 print("Total Units Processed:", inventory)
 print("Number of Failed/Rejected Entries:", reject_count)
