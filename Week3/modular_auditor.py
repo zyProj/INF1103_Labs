@@ -20,7 +20,12 @@ def process_delivery(current_total, new_value):
     current_total += int(new_value)
     return current_total
 
+def calculate_tax(amount):
+    tax_rate = 0.1
+    return amount * tax_rate
+
 inventory, reject_count = get_valid_input()
 
-print("Total Units Processed:", inventory)
+print("Total Deliveries Processed:", inventory)
+print("Total Tax Amount:", calculate_tax(inventory))
 print("Number of Failed/Rejected Entries:", reject_count)
