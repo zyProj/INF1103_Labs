@@ -1,7 +1,7 @@
 def load_inventory():
     try:
         nested_list = []
-        with open("Week4/inventory.txt", "r") as file:
+        with open("inventory.txt", "r") as file:
             for line in file:
                 row = line.strip().split(",")
                 nested_list.append(row)
@@ -11,7 +11,7 @@ def load_inventory():
         return []
 
 def save_inventory(input_list):
-    with open("Week4/inventory.txt", "a") as file:
+    with open("inventory.txt", "a") as file:
         file.write(input_list[0] + "," + input_list[1] + "," + input_list[2] + "\n")
 
 print("Current Orders:")
@@ -24,7 +24,7 @@ while True:
         product_input = input("Enter the Product: ")
         quantity_input = input("Enter the Quantity: ")
         input_list = [id_input, product_input, quantity_input]
-
+        
         nested_list = load_inventory()
         nested_list.append(input_list)
         save_inventory(input_list)
