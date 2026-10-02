@@ -4,6 +4,7 @@ def menu():
     print("================== Menu ==================")
     print("1. Display All Products")
     print("2. Add Product")
+    print("3. Update Stock")
     print("6. Exit")
     print("==========================================")
 
@@ -28,8 +29,8 @@ def display_inventory(inventory):
 def add_product(inventory):
     id_input = input("Enter the ID: ")
     product_input = input("Enter the Product: ")
-    price_input = float(input("Enter the Price: "))
-    stock_input = int(input("Enter the Stock: "))
+    price_input = input("Enter the Price: ")
+    stock_input = input("Enter the Stock: ")
     new_product = {"id": id_input, "product": product_input, "price": price_input, "stock": stock_input}
     
     inventory.append(new_product)
@@ -39,6 +40,16 @@ def save_inventory(inventory):
     with open("Week5/inventory.json", "w") as file:
         json.dump(inventory, file)
 
+def update_stock(inventory):
+    product_id = input("Enter the Product ID to update: ")
+    new_stock = input("Enter the new stock value: ")
+    for item in inventory:
+        if item["id"] == product_id:
+            item["stock"] = new_stock
+            print("Stock updated successfully!\n")
+            return
+    print(f"Product with ID '{product_id}' not found.\n")
+
 inventory = load_inventory()
 while True:
     menu()
@@ -47,6 +58,9 @@ while True:
         display_inventory(inventory)
     elif menu_input == "2":
         add_product(inventory)
+        save_inventory(inventory)
+    elif menu_input == "3":
+        update_stock(inventory)
         save_inventory(inventory)
     elif menu_input == "6":
         print("Exiting the program.")
