@@ -13,7 +13,7 @@ def menu():
 def load_inventory():
     try:
         nested_list = []
-        with open("Week5/inventory.json", "r") as file:
+        with open("inventory.json", "r") as file:
             data = json.load(file)
         for item in data:
             nested_list.append({"id": item["id"], "product": item["product"], "price": item["price"], "stock": item["stock"]})
@@ -39,7 +39,7 @@ def add_product(inventory):
     print("Product added successfully.\n")
 
 def save_inventory(inventory):
-    with open("Week5/inventory.json", "w") as file:
+    with open("inventory.json", "w") as file:
         json.dump(inventory, file)
 
 def update_stock(inventory):
