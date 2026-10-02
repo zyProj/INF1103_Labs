@@ -1,5 +1,15 @@
-inventory_dict = [
-    {"id": "001", "product": "Mouse", "price": 25, "stock": 100},
-    {"id": "002", "product": "Keyboard", "price": 50, "stock": 50},
-    {"id": "003", "product": "Speaker", "price": 70, "stock": 25},
-]
+import json
+
+def load_inventory():
+    try:
+        nested_list = []
+        with open("Week5/inventory.json", "r") as file:
+            data = json.load(file)
+        for item in data:
+            nested_list.append({"id": item["id"], "product": item["product"], "price": item["price"], "stock": item["stock"]})
+        return nested_list
+    
+    except FileNotFoundError:
+        return []
+    
+print(load_inventory())
