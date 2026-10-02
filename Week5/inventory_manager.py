@@ -6,6 +6,7 @@ def menu():
     print("2. Add Product")
     print("3. Update Stock")
     print("4. Search Product")
+    print("5. Save Inventory")
     print("6. Exit")
     print("==========================================")
 
@@ -75,8 +76,14 @@ while True:
         save_inventory(inventory)
     elif menu_input == "4":
         search_product(inventory)
+    elif menu_input == "5":
+        save_inventory(inventory)
+        print("Saving Inventory...")
+        print("Inventory saved successfully to inventory.json.\n")
     elif menu_input == "6":
-        print("Exiting the program.")
+        save_inventory(inventory)
+        print("Saving Inventory before exit...")
+        print("Inventory saved successfully.")
         break
     else:
         print("Invalid option. Please try again.")
