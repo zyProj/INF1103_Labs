@@ -1,5 +1,11 @@
 import json
 
+def menu():
+    print("================== Menu ==================")
+    print("1. Display All Products")
+    print("6. Exit")
+    print("==========================================")
+
 def load_inventory():
     try:
         nested_list = []
@@ -11,5 +17,22 @@ def load_inventory():
     
     except FileNotFoundError:
         return []
-    
-print(load_inventory())
+
+def display_inventory(inventory):
+    print("=====================================================")
+    for item in inventory:
+        print(f"ID: {item['id']} | Product: {item['product']} | Price: ${item['price']} | Stock: {item['stock']}")
+    print("=====================================================")
+    print("\n")
+
+inventory = load_inventory()
+while True:
+    menu()
+    menu_input = input("Enter option: ")
+    if menu_input == "1":
+        display_inventory(inventory)
+    elif menu_input == "6":
+        print("Exiting the program.")
+        break
+    else:
+        print("Invalid option. Please try again.")
