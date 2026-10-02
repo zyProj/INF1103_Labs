@@ -5,6 +5,7 @@ def menu():
     print("1. Display All Products")
     print("2. Add Product")
     print("3. Update Stock")
+    print("4. Search Product")
     print("6. Exit")
     print("==========================================")
 
@@ -50,6 +51,16 @@ def update_stock(inventory):
             return
     print(f"Product with ID '{product_id}' not found.\n")
 
+def search_product(inventory):
+    search_input = input("Enter the Product ID to search: ")
+    for item in inventory:
+        if item["id"] == search_input:
+            print("================== Product Found ==================")
+            print(f"ID: {item['id']}\nProduct: {item['product']}\nPrice: ${item['price']}\nStock: {item['stock']}")
+            print("===================================================\n")
+            return
+    print(f"Product with ID '{search_input}' not found.\n")
+
 inventory = load_inventory()
 while True:
     menu()
@@ -62,6 +73,8 @@ while True:
     elif menu_input == "3":
         update_stock(inventory)
         save_inventory(inventory)
+    elif menu_input == "4":
+        search_product(inventory)
     elif menu_input == "6":
         print("Exiting the program.")
         break
