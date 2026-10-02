@@ -1,0 +1,5 @@
+inventory_dict = [
+    {"id": "001", "product": "Mouse", "price": 25, "stock": 100},
+    {"id": "002", "product": "Keyboard", "price": 50, "stock": 50},
+    {"id": "003", "product": "Speaker", "price": 70, "stock": 25},
+]
