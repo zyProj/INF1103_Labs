@@ -29,7 +29,7 @@ class Inventory:
 
     def load_inventory(self):
         try:
-            with open("Week8/inventory.json", "r") as file:
+            with open("inventory.json", "r") as file:
                 data = json.load(file)
         except FileNotFoundError:
             return self.__products
@@ -49,7 +49,7 @@ class Inventory:
                 "stock": product._Product__stock
             }
             inventory.append(product_data)
-        with open("Week8/inventory.json", "w") as file:
+        with open("inventory.json", "w") as file:
             json.dump(inventory, file)
 
     def display_all(self):
