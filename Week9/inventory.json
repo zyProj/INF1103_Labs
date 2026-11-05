@@ -1,0 +1,5 @@
+[
+    {"id": "001", "product_type": "physical", "product": "Mouse", "price": 25, "stock": 100, "weight": 0.2},
+    {"id": "002", "product_type": "digital", "product": "E-book", "price": 15, "stock": 50, "download_size": 5},
+    {"id": "003", "product_type": "physical", "product": "Speaker", "price": 70, "stock": 25, "weight": 2.0}
+]
