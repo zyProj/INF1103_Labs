@@ -6,4 +6,5 @@ class PhysicalProduct(Product):
         self.__weight = weight
 
     def display_information(self):
-        print(f"ID: {self._Product__product_id} | Product: {self._Product__name} | Price: ${self._Product__price:.2f} | Stock: {self._Product__stock} units | Weight: {self.__weight} kg")
+        super().display_information()
+        print(f"Weight: {self.__weight} kg")
