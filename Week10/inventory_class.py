@@ -11,6 +11,7 @@ class Inventory:
             print("=====================================================")
             for product in self.products:
                 product.display_information()
+                print(product.get_fulfilment_info())
             print("=====================================================\n")
 
     def add_product(self, product: Product) -> None:
