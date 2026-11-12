@@ -13,6 +13,10 @@ class Product(ABC):
     def get_fulfilment_info(self):
         pass
 
+    @property
+    def price(self) -> float:
+        return self.__price
+
     def update_stock(self, quantity):
         self.__stock = quantity
 
