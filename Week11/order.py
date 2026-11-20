@@ -1,8 +1,7 @@
 from product import Product
-#from physical_product_class import PhysicalProduct
-#from digital_product_class import DigitalProduct
 from orderline import OrderLine
-from discountStrategy import DiscountStrategy, NoDiscount
+from discountStrategy import DiscountStrategy
+from noDiscount import NoDiscount
 
 class Order:
     def __init__(self, order_id: str, discount: DiscountStrategy | None = None) -> None:
